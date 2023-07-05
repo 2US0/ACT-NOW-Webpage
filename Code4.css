@@ -1,0 +1,572 @@
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    :active,
+    :hover,
+    :focus {
+        outline: 0 !important;
+        outline-offset: 0;
+    }
+
+    ::before,
+    ::after {
+        position: absolute;
+        content: "";
+    }
+
+    .btn-holder {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1000px;
+        margin: 10px auto 35px;
+    }
+
+    .btn {
+        position: relative;
+        display: inline-block;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        margin: 0px 25px 15px;
+        min-width: 150px;
+    }
+
+    .btn span {
+        position: relative;
+        display: inline-block;
+        font-size: 30px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px 20px;
+        transition: 0.3s;
+    }
+
+
+
+    /*--- btn-3 ---*/
+    .btn-3 {
+        padding: 5px;
+    }
+
+    .btn-3 span {
+        color: rgb(255, 255, 255);
+        background-color: rgb(54, 56, 55);
+    }
+
+    .btn-3::before,
+    .btn-3::after {
+        background: transparent;
+        z-index: 2;
+    }
+
+
+    /* 12. hover-border-2 */
+    .btn.hover-border-2::before,
+    .btn.hover-border-2::after {
+        width: 10%;
+        height: 25%;
+        transition: 0.35s;
+    }
+
+    .btn.hover-border-2::before {
+        bottom: 0;
+        left: 0;
+        border-left: 1px solid rgb(28, 31, 30);
+        border-bottom: 1px solid rgb(28, 31, 30);
+    }
+
+    .btn.hover-border-2::after {
+        top: 0;
+        right: 0;
+        border-right: 1px solid rgb(28, 31, 30);
+        border-top: 1px solid rgb(28, 31, 30);
+    }
+
+    .btn.hover-border-2:hover::before,
+    .btn.hover-border-2:hover::after {
+        width: 99%;
+        height: 99%;
+    }
+
+    /* Style all font awesome icons */
+    .fa {
+        padding: 18px 18px;
+        margin: 10px;
+        font-size: 70px;
+        height: 69px;
+        width: 69px;
+        border-radius: 50%;
+        text-align: left;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+
+    /* Add a hover effect if you want */
+    .fa:hover {
+        opacity: 0.7;
+    }
+
+    /* Set a specific color for each brand */
+
+    /* Facebook */
+    .fa-facebook {
+        background: #3B5998;
+        color: white;
+    }
+
+    /* Linkedin */
+    .fa-linkedin {
+        background: #0077b5;
+        color: white;
+    }
+
+    .topnav {
+        background-color: #333;
+        overflow: hidden;
+    }
+
+    /* Style the links inside the navigation bar */
+    .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    /* Change the color of links on hover */
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    /* Add an active class to highlight the current page */
+    .topnav a.active {
+        background-color: #3cb371;
+        color: white;
+    }
+
+    /* Hide the link that should open and close the topnav on small screens */
+    .topnav .icon {
+        display: none;
+    }
+
+    /* Style the search box inside the navigation bar */
+    .topnav input[type=text] {
+        float: right;
+        padding: 6px;
+        border: none;
+        margin-top: 8px;
+        margin-right: 16px;
+        font-size: 17px;
+    }
+
+    /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+    @media screen and (max-width: 600px) {
+
+        .topnav a,
+        .topnav input[type=text] {
+            float: none;
+            display: block;
+            text-align: left;
+            width: 100%;
+            margin: 0;
+            padding: 14px;
+        }
+
+        .topnav input[type=text] {
+            border: 1px solid #ccc;
+        }
+    }
+
+    @import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
+
+    :root {
+        --d: 700ms;
+        --e: cubic-bezier(0.19, 1, 0.22, 1);
+        --font-sans: "Rubik", sans-serif;
+        --font-serif: "Cardo", serif;
+    }
+
+    /* html,
+            body {
+                height: 100%;
+            }
+    
+            body {
+                display: grid;
+                place-items: center;
+            } */
+
+    .page-content {
+        display: grid;
+        grid-gap: 1rem;
+        padding: 1rem;
+        max-width: 1024px;
+        margin: 0 auto;
+        font-family: var(--font-sans);
+    }
+
+    @media (min-width: 600px) {
+        .page-content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 800px) {
+        .page-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+        color: whitesmoke;
+        background-color: whitesmoke;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (min-width: 600px) {
+        .card {
+            height: 350px;
+        }
+    }
+
+    .card:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 110%;
+        background-size: cover;
+        background-position: 0 0;
+        transition: transform calc(var(--d) * 1.5) var(--e);
+        pointer-events: none;
+    }
+
+    .card:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 200%;
+        pointer-events: none;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
+        transform: translateY(-50%);
+        transition: transform calc(var(--d) * 2) var(--e);
+    }
+
+    .card:nth-child(1):before {
+        background-image: url(https://play-lh.googleusercontent.com/wwJX4r_xJD7zv8uqs7C8mvy-KkngaSzyvCf2ZiULy3l-1sbBY2t1jHFZ_bgF8eO_PpU) !important;
+    }
+
+    .card:nth-child(2):before {
+        background-image: url(https://hetic.in/wp-content/uploads/2019/10/Digital-Marketing-1.jpg) !important;
+    }
+
+    .card:nth-child(3):before {
+        background-image: url(https://hbr.org/resources/images/article_assets/2022/11/1122_21_Finance_1360192291_v2.pg_.jpg) !important;
+    }
+
+
+
+    .content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 1rem;
+        transition: transform var(--d) var(--e);
+        z-index: 1;
+    }
+
+    .content>*+* {
+        margin-top: 1rem;
+    }
+
+    .title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        line-height: 1.2;
+    }
+
+    .copy {
+        font-family: var(--font-serif);
+        font-size: 1.125rem;
+        font-style: italic;
+        line-height: 1.35;
+    }
+
+    .bttn {
+        cursor: pointer;
+        margin-top: 1.5rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.65rem;
+        font-weight: bold;
+        letter-spacing: 0.025rem;
+        text-transform: uppercase;
+        color: white;
+        background-color: black;
+        border: none;
+    }
+
+    .bttn:hover {
+        background-color: #0d0d0d;
+    }
+
+    .bttn:focus {
+        outline: 1px dashed rgb(255, 255, 255);
+        outline-offset: 3px;
+    }
+
+    @media (hover: hover) and (min-width: 600px) {
+        .card:after {
+            transform: translateY(0);
+        }
+
+        .content {
+            transform: translateY(calc(100% - 4.5rem));
+        }
+
+        .content>*:not(.title) {
+            opacity: 0;
+            transform: translateY(1rem);
+            transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+        }
+
+        .card:hover,
+        .card:focus-within {
+            align-items: center;
+        }
+
+        .card:hover:before,
+        .card:focus-within:before {
+            transform: translateY(-4%);
+        }
+
+        .card:hover:after,
+        .card:focus-within:after {
+            transform: translateY(-50%);
+        }
+
+        .card:hover .content,
+        .card:focus-within .content {
+            transform: translateY(0);
+        }
+
+        .card:hover .content>*:not(.title),
+        .card:focus-within .content>*:not(.title) {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: calc(var(--d) / 8);
+        }
+
+        .card:focus-within:before,
+        .card:focus-within:after,
+        .card:focus-within .content,
+        .card:focus-within .content>*:not(.title) {
+            transition-duration: 0s;
+        }
+    }
+
+    #why {
+        position: absolute;
+        top: 1200px;
+        left: 325px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    :root {
+        --dark-color: hsl(var(--hue), 100%, 9%);
+        --light-color: hsl(var(--hue), 95%, 98%);
+        --base: hsl(var(--hue), 95%, 50%);
+        --complimentary1: hsl(var(--hue-complimentary1), 95%, 50%);
+        --complimentary2: hsl(var(--hue-complimentary2), 95%, 50%);
+
+        --font-family: "Poppins", system-ui;
+
+        --bg-gradient: linear-gradient(to bottom,
+                hsl(var(--hue), 95%, 99%),
+                hsl(var(--hue), 95%, 84%));
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .orb-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    strong {
+        font-weight: 600;
+    }
+
+    .overlay {
+        width: 100%;
+        margin: 10px 80px;
+        padding: 10px 65px;
+        display: flex;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.375);
+        box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+        border-radius: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.125);
+    }
+
+    .overlay__title {
+        padding-top: 5px;
+        font-size: 60px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+        line-height: 2.75rem;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        margin-bottom: 2rem;
+    }
+
+    .text-gradient {
+        background: linear-gradient(to right, #1B1871, #08a0ff,
+                #3CB371, #2c8059);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        /* background-image: linear-gradient(45deg,
+                var(--base) 25%,
+                var(--complimentary2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent; */
+    }
+
+    .overlay__description {
+        font-size: 30px;
+        line-height: 1.75rem;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+
+    .overlay__btns {
+        width: 100%;
+        display: flex;
+    }
+
+    .overlay__btn {
+        width: 50%;
+        height: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--light-color);
+        background: var(--dark-color);
+        border: none;
+        border-radius: 0.5rem;
+        transition: transform 150ms ease;
+        outline-color: hsl(var(--hue), 95%, 50%);
+    }
+
+    .overlay__btn:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+
+
+    .overlay__btn-emoji {
+        margin-left: 0rem;
+    }
+
+
+
+    /* Not too many browser support this yet but it's good to add! */
+    @media (prefers-contrast: high) {
+        .orb-canvas {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 1140px) {
+        .overlay {
+            padding: 8rem 4rem;
+        }
+    }
+
+    @media only screen and (max-width: 840px) {
+        body {
+            padding: 1.5rem;
+        }
+
+        .overlay {
+            padding: 4rem;
+            height: auto;
+        }
+
+        .overlay__title {
+            font-size: 1.25rem;
+            line-height: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .overlay__description {
+            font-size: 0.875rem;
+            line-height: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        .overlay {
+            padding: 1.5rem;
+        }
+
+        .overlay__btns {
+            flex-wrap: wrap;
+        }
+
+        .overlay__btn {
+            width: 100%;
+            font-size: 0.75rem;
+            margin-right: 0;
+        }
+
+        .overlay__btn:first-child {
+            margin-bottom: 1rem;
+        }
+    }
+
+    body {
+        background-color: #dfebe7;
+    }
